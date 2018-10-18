@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wild Card Query</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="{{ url_for('static', filename='css/mdb.min.css') }}" rel="stylesheet">
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+        /* Necessary for full page carousel*/
+
+        html,
+        body,
+        .view {
+            height: 100%;
+        }
+        /* Navigation*/
+
+        .navbar {
+            background-color: transparent;
+        }
+
+        .scrolling-navbar {
+            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            transition: background .5s ease-in-out, padding .5s ease-in-out;
+        }
+
+        .top-nav-collapse {
+            background-color: #2b3f66;
+        }
+
+        footer.page-footer {
+            background-color: #2b3f66;
+            margin-top: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                background-color: #2b3f66;
+            }
+        }
+        /* Carousel*/
+
+        .carousel,
+        .carousel-item,
+        .active {
+            height: 100%;
+        }
+
+        .carousel-inner {
+            height: 100%;
+        }
+        /*Caption*/
+
+        .flex-center {
+            color: #fff;
+        }
+
+        @media (min-width: 776px) {
+            .carousel .view ul li {
+                display: inline;
+            }
+            .carousel .view .full-bg-img ul li .flex-item {
+                margin-bottom: 1.5rem;
+            }
+        }
+        .navbar .btn-group .dropdown-menu a:hover {
+            color: #000 !important;
+        }
+        .navbar .btn-group .dropdown-menu a:active {
+            color: #fff !important;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form action="/Wild_Card/" method="POST" style="margin-top: 15em;">
+        <h1 style="margin-left:12.3em;" class="h1-responsive flex-item font-bold">Wildcard Search</h1>
+        <div style="margin-right:40em">
+            <input type="text" name="query1" id="query1" class="form-control" placeholder="Search" value="{{request.form.query1}}" style="margin-left: 20em">
+        </div>
+
+        <li>
+            <!--<input class="btn btn-primary" name="bnt-se" id="bnt-se" type="submit" placeholder="Start Search" value="Start Search">-->
+            <button class="btn btn-primary" style="margin-left: 44em;">Start Search</button>
+        </li>
+    </form>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
+
+    <!-- Bootstrap dropdown -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.min.js') }}"></script>
+
+    <script>
+    new WOW().init();
+    </script>
+</body>
+</html>
